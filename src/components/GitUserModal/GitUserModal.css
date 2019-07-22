@@ -1,0 +1,53 @@
+.GitUserModal {
+  position: absolute;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 200px;
+  background: white;
+  border-radius: 6px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.GitUserModal h4 {
+  text-align: center;
+}
+.GitUserModal input {
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  border: 2px solid #fafafa7a;
+  border-radius: 6px;
+  text-align: center;
+}
+.GitUserModal .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+.GitUserModal .buttons button:first-child  {
+  color: white;
+  width: 134px;
+  border-radius: 6px;
+  height: 38px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: rgb(192, 188, 188);
+}
+.GitUserModal .buttons button:nth-child(2){
+  color: white;
+  width: 134px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  height: 38px;
+  font-weight: bold;
+  background: rgb(117, 196, 123);
+}
