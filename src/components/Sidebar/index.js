@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
     return (
       <div className="Sidebar">
         {users && users.map(user => (
-        <User user={user} />
+        <User user={user} goToLocation={this.props.goToLocation} removeUser={this.props.removeUser}/>
         ))}
 
       </div>

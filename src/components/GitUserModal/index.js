@@ -23,6 +23,7 @@ class GitUserModal extends Component {
 
   render() {
     return (
+      <>
       <div className="GitUserModal">
         <h4>Adicionar novo usuário</h4>
         <input
@@ -42,12 +43,15 @@ class GitUserModal extends Component {
           </button>
         </div>
       </div>
+
+      </>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return { mapState: state[0] };
+  console.log(state)
+  return { mapState: state[0], error: state[1] };
 };
 
 const mapDispatchToProps = dispatch =>

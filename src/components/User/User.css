@@ -12,12 +12,18 @@
   box-sizing: border-box;
   height: 120px;
   border-radius: 8px;
+  background: white;
+  border-bottom: 1.5px solid #c2c2c2;
 }
-.User img {
+.User img:first-child {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin-right: -12px;
+}
+.User .close img, .User .find img {
+  width: 25px;
+  height: 26px;
 }
 .User h1 {
   font-size: 18px;

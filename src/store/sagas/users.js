@@ -2,6 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import API from '../../services/api';
 
 import { Creators as UsersActions } from '../ducks/users';
+import { Creators as ErrorActions } from '../ducks/error'
 
 export function* findUser(action) {
 
@@ -13,7 +14,7 @@ export function* findUser(action) {
     yield put(UsersActions.findUserSuccess({data: response.data,...action.payload.coords}));
   } catch (error) {
     yield put(
-      console.log('erro')
+      ErrorActions.setError('User not found!')
     );
   }
 }

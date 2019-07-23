@@ -1,23 +1,23 @@
-.GitUserModal {
+.DeleteModal {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   margin-left: auto;
   margin-right: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 340px;
+  width: 380px;
   height: 200px;
-  background: white;
+  background: red;
   border-radius: 6px;
   padding: 24px;
   box-sizing: border-box;
 }
 
-.GitUserModal h4 {
+.DeleteModal h4 {
   text-align: center;
 }
-.GitUserModal input {
+.DeleteModal input {
   width: 100%;
   height: 28px;
   background: transparent;
@@ -25,13 +25,13 @@
   border-radius: 6px;
   text-align: center;
 }
-.GitUserModal .buttons {
+.DeleteModal .buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1em;
 }
-.GitUserModal .buttons button:first-child  {
+.DeleteModal .buttons button:first-child  {
   color: white;
   width: 134px;
   border-radius: 6px;
@@ -41,7 +41,7 @@
   font-weight: bold;
   background: rgb(192, 188, 188);
 }
-.GitUserModal .buttons button:nth-child(2){
+.DeleteModal .buttons button:nth-child(2){
   color: white;
   width: 134px;
   border-radius: 6px;
