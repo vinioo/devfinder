@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -9,11 +9,12 @@ import MarkIcon from '../MarkIcon';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as UsersActions } from '../../store/ducks/users';
+import { Creators as ErrorActions } from '../../store/ducks/error'
 
 import './Map.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-class Map extends Component {
+class Map extends PureComponent {
   state = {
     viewport: {
       width: '100%',
@@ -45,12 +46,10 @@ class Map extends Component {
     });
   };
   handleAdd = async (user, coords) => {
-    await this.props.findUserRequest(user, coords);
+      await this.props.findUserRequest(user, coords);
       this.closeModal();
-      if (this.props.error.visible)  {
-        toast(`${this.props.error.message}`, {
-          position: toast.POSITION.BOTTOM_RIGHT
-        })
+      if (this.props.error.visible) {
+      toast(`${this.props.error.message}`)
       }
   };
   closeModal = () => {
@@ -62,7 +61,6 @@ class Map extends Component {
     const { users } = this.props.mapState;
     return (
       <div>
-
         <ToastContainer />
         {this.state.modalOpen && (
           <GitUserModal
@@ -101,11 +99,12 @@ class Map extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return { mapState: state[0], error: state[1] };
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(UsersActions, dispatch);
+  bindActionCreators({...UsersActions,...ErrorActions}, dispatch);
 
 export default connect(
   mapStateToProps,

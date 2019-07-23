@@ -19,6 +19,9 @@ export default class User extends Component {
   confirmDelete = () => {
     console.log(this.props)
     this.props.removeUser(this.props.user.id);
+    this.setState({
+      deleteModal: false
+    })
   };
   render() {
     const { user } = this.props;
